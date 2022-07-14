@@ -9,9 +9,9 @@ import Rating from "./Rating";
         <PageTitle title={"This is App component"}/>
         <PageTitle title={"My friends"}/>
         Article 1
-        <Rating value={3}/>
-        <Accordion titleValue={"Menu"}/>
-        <Accordion titleValue={"Users"}/>
+        {/*<Rating value={3}/>*/}
+        <Accordion titleValue={"Menu"} collapsed={false}/>
+        <Accordion titleValue={"Users"} collapsed={true}/>
         Article 2
 
         <Rating value={0}/>
