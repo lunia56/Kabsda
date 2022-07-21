@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
-import Accordion from "./Accordion";
-import Rating from "./Rating";
+import Accordion from "./components/Accordion";
+import Rating from "./components/Rating";
 
  function App() {
   return (
