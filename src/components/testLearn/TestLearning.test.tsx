@@ -1,4 +1,4 @@
-import {CityType} from './TestsLearn';
+import {addMoneyToBudget, CityType, repairHouse, toFireStaff, toHireStaff} from './TestsLearn';
 
 let city: CityType;
 
@@ -38,22 +38,22 @@ beforeEach(() => {
             }],
         governmentBuildings: [
             {
-                type:"HOSPITAL",
-                budget:200000,
-                staffCount:200,
+                type: 'HOSPITAL',
+                budget: 200000,
+                staffCount: 200,
                 address: {
-                    street:{
-                        title:'Central Str'
+                    street: {
+                        title: 'Central Str'
                     }
                 }
             },
             {
-            type:'FIRE-STATION',
-                budget:500000,
-                staffCount:1000,
+                type: 'FIRE-STATION',
+                budget: 500000,
+                staffCount: 1000,
                 address: {
-                    street:{
-                        title:'South Str'
+                    street: {
+                        title: 'South Str'
                     }
                 }
             }
@@ -98,3 +98,36 @@ test('test city should contains hospital and fire station', () => {
     expect(city.governmentBuildings[1].staffCount).toBe(1000);
     expect(city.governmentBuildings[1].address.street.title).toBe('South Str');
 })
+
+
+test('Budget should be for changed fot HOSPITAL', () => {
+    addMoneyToBudget(city.governmentBuildings[0], 100000);
+    expect(city.governmentBuildings[0].budget).toBe(300000);
+});
+
+test('Budget should be changed for FIRE-STATION', () => {
+    addMoneyToBudget(city.governmentBuildings[1], 35)
+    expect(city.governmentBuildings[1].budget).toBe(500035)
+})
+
+
+test('House shoulhd be repared', () => {
+        repairHouse(city.houses[1])
+        expect(city.houses[1].repaired).toBeTruthy()
+    }
+)
+
+// 01. создайте в том же файле еще одну функцию, чтобы тесты прошли
+test('staff should be increased', () => {
+    toFireStaff(city.governmentBuildings[0], 15)
+    expect(city.governmentBuildings[0].staffCount).toBe(185)
+})
+
+
+test('staff should be  staffed', () => {
+    toHireStaff(city.governmentBuildings[1], 1)
+    expect(city.governmentBuildings[1].staffCount).toBe(1001)
+})
+
+
+
