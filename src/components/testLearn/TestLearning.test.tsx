@@ -124,10 +124,32 @@ test('staff should be increased', () => {
 })
 
 
-test('staff should be  staffed', () => {
-    toHireStaff(city.governmentBuildings[1], 1)
-    expect(city.governmentBuildings[1].staffCount).toBe(1001)
-})
-
+// test('staff should be  staffed', () => {
+//     toHireStaff(city.governmentBuildings[1], 1)
+//     expect(city.governmentBuildings[1].staffCount).toBe(1001)
+// })
+//
+//
+//
+//
+//
+// test("reference type test ", ()=>{
+//     let user={
+//         name:"Ilya",
+//         age:30,
+//         address:{
+//             title:"Spb"
+//         }
+//     }
+//     let user2={
+//         name:"Ilya",
+//         age:30,
+//         address:user.address
+//     }
+//     user2.address.title="minsk"
+//     expect(user.address).toBe(user2.address)
+//     expect(user.address.title).toBe("minsk")
+//
+// })
 
 

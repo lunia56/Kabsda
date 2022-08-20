@@ -1,0 +1,33 @@
+.onStyle {
+    width: 30px;
+    height: 20px;
+    border:1px solid black;
+    display: inline-block;
+}
+.offStyle{
+    width: 30px;
+    height: 20px;
+    border:1px solid black;
+    display: inline-block;
+    /*margin-left: 2px;*/
+
+}
+.bgColorRed{
+    background-color: red;
+    padding: 2px ;
+
+}
+.bgColorGreen{
+    background-color: Green;
+    padding: 2px ;
+
+}
+.indicator{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border:1px solid black;
+    display: inline-block;
+    margin-left: 5px;
+
+}
