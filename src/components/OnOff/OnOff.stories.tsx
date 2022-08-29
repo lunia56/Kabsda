@@ -7,8 +7,9 @@ export default {
     component: OnOff
 }
 
-export const OnMode = ()=> <OnOff on={true} setOn={x=>x}/>
-export const OffMode= ()=> <OnOff on={false} setOn={x=>x}/>
+const callback = action("on or off clicked")
+export const OnMode = ()=> <OnOff on={true} setOn={callback}/>
+export const OffMode= ()=> <OnOff on={false} setOn={callback}/>
 export const ChangeMode= ()=>{
     let [ value,setValue] = useState(false)
     return <OnOff on={value} setOn={setValue}/>
