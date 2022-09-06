@@ -1,4 +1,4 @@
-import React, {MouseEvent} from 'react';
+import React from 'react';
 
 type AccordionPropsType = {
     titleValue: string
@@ -7,7 +7,9 @@ type AccordionPropsType = {
     items: ItemType[]
     onClick: () => void
 }
-
+export type StateType = {
+    collapsed:boolean
+}
 function Accordion(props: AccordionPropsType) {
     return (
         <div>
@@ -17,17 +19,21 @@ function Accordion(props: AccordionPropsType) {
     )
 }
 
+
+export default Accordion
+
 type AccordionTitlePropsType = {
     title: string
     onChange: () => void
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+function AccordionTitleMemo(props: AccordionTitlePropsType) {
     console.log('AccordionTitleRender')
     return (
         <h3 onClick={(event) => props.onChange()}>{props.title}</h3>
     )
 }
+const AccordionTitle = React.memo(AccordionTitleMemo)
 
 type AccordionBodyType = {
     items: ItemType[]
@@ -38,7 +44,7 @@ type ItemType = {
     value: any
 }
 
-function AccordionBody(props: AccordionBodyType) {
+function AccordionBodyMemo(props: AccordionBodyType) {
     return (
         <ul>
             {props.items.map((el, index) => {
@@ -50,10 +56,7 @@ function AccordionBody(props: AccordionBodyType) {
                 )
             })}
         </ul>
-
     )
-
-
 }
 
-export default Accordion
+const AccordionBody = React.memo(AccordionBodyMemo)

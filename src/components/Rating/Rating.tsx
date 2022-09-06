@@ -7,7 +7,7 @@ export type RatingPropsType = {
     onClick: (value: RatingValueType)=>void
 }
 
-function Rating(props: RatingPropsType) {
+function RatingMemo(props: RatingPropsType) {
     return (
         <div>
             <Star selected={props.value > 0} onClick={props.onClick} value={1}/>
@@ -19,14 +19,14 @@ function Rating(props: RatingPropsType) {
     )
 
 }
-
+const Rating = React.memo(RatingMemo)
 type StarPropsType = {
     selected: boolean
     onClick: (value: RatingValueType) => void
     value: RatingValueType
 }
 
-const Star: React.FC<StarPropsType> = (props) => {
+const StarMemo: React.FC<StarPropsType> = (props) => {
     return (
     <>
         {
@@ -36,6 +36,6 @@ const Star: React.FC<StarPropsType> = (props) => {
     </>
     )
 }
-
+const Star = React.memo(StarMemo)
 
 export default Rating

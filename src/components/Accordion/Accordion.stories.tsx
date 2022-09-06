@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 import Accordion from './Accordion';
 import {action} from '@storybook/addon-actions';
+import {reducer, TOGGLE_COLLAPSED} from './reducer';
 
 export default {
     title: 'Accordion  stories',
@@ -25,6 +26,19 @@ export const ChangedMode = () => {
                           value: 3
                       }, {title: 'Victor', value: 4}]}/>
 }
+
+
+export const UseReducerLearn = () => {
+    const [state,dispatch] = useReducer(reducer,{collapsed:false})
+
+    return <Accordion titleValue={' изменяемый аккордион '} collapsed={state.collapsed}
+                      onChange={()=>dispatch({type:TOGGLE_COLLAPSED})} onClick={OnClickCallback}
+                      items={[{title: 'Dimych', value: 1}, {title: 'Valera', value: 2}, {
+                          title: 'Artem',
+                          value: 3
+                      }, {title: 'Victor', value: 4}]}/>
+}
+
 
 
 

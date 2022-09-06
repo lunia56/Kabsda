@@ -7,7 +7,7 @@ export type PropsType = {
 }
 
 
-const OnOff = (props: PropsType) => {
+const OnOffMemo = (props: PropsType) => {
 
     const onHandler = () => {
        props.setOn(true)
@@ -28,4 +28,5 @@ const OnOff = (props: PropsType) => {
     );
 };
 
+const OnOff = React.memo(OnOffMemo)
 export default OnOff;
