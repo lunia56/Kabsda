@@ -59,6 +59,9 @@ function SelectMemo(props: SelectPropsType) {
                 <option value="">Moscow</option>
                 <option value="">Kiev</option>
             </select>
+
+
+
             <div className={style.select} onKeyDown={onKeyDown} tabIndex={0}>
                 <span className={style.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
                 {active &&

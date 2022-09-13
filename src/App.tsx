@@ -39,3 +39,16 @@ function PageTitle(props: any) {
 
 
 export default App;
+//
+// function chain(input:number, fs:any) {
+//
+//     return fs.reduce((acc:any,el:any)=>el(acc),input)
+// // implement the "chain" function
+// }
+//
+// console.log(chain(10,))
+const sum =(a:number,b:number)=>{
+    return a+b
+}
+sum(10,15)///?
+console.log(sum(10,15))
