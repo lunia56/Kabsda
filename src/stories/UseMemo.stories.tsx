@@ -43,6 +43,7 @@ export const Example1 = () => {
         </>
     )
 }
+
 export const Example2 = () => {
     let [a, setA] = useState(0)
     let [b, setB] = useState(0)
@@ -76,3 +77,10 @@ export const Example2 = () => {
         </>
     )
 }
+
+const BooksSecret = (props: { books: Array<string> }) => {
+    console.log("BOOKS RENDER")
+    return <div>{props.books.map((book,i) => <div key={i}>{book}</div>)}</div>
+}
+
+const Books =React.memo(BooksSecret)
